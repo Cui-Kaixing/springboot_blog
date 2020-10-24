@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="_fragments :: head(~{::title})">
+		<title>联系我</title>
+
+		<!-- meta -->
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	</head>
+
+	<body id="page">
+		<!--头部-->
+		<div class="container" th:replace="_fragments :: menu">
+		</div>
+
+		<div class="content-body">
+			<div class="container">
+				<div class="row">
+					<main class="col-md-12">
+						<h1 class="page-title">Contact</h1>
+						<article class="post">
+							<div class="alert alert-success alert-dismissible" th:unless="${#strings.isEmpty(message)}">
+								<button type="button" class="close" data-dismiss="alert">&times;</button>
+								<strong th:text="${message}"></strong>
+							</div>
+							<div class="entry-content clearfix">
+								<form action="#" th:action="@{/contact/email/}" method="post" class="contact-form">
+									<div class="row">
+										<div class="col-md-6 col-md-offset-3">
+											<input type="text" name="name" placeholder="Name" required>
+											<input type="email" name="email" placeholder="Email" required>
+											<input type="text" name="subject" placeholder="Subject" required>
+											<textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+											<button class="btn-send btn-5 btn-5b ion-ios-paperplane"><span>Drop Me a Line</span></button>
+										</div>
+									</div>	<!-- row -->
+								</form>
+							</div>
+						</article>
+					</main>
+				</div>
+			</div>
+		</div>
+
+		<!--底部-->
+		<footer id="site-footer" th:replace="_fragments :: footer">
+		</footer>
+
+		<!-- Mobile Menu -->
+		<div class="overlay overlay-hugeinc" th:replace="_fragments :: mobile">
+		</div>
+
+		<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+		<!-- js -->
+		<script src="../../static/blog/js/script.js"  th:src="@{/blog/js/script.js}"></script>
+		<script src="../../static/blog/js/jquery-2.1.3.min.js"></script>
+		<script src="../../static/blog/js/bootstrap.min.js" ></script>
+		<script src="../../static/blog/js/pace.min.js" ></script>
+		<script src="../../static/blog/js/modernizr.custom.js"></script>
+		<!--/*/</th:block>/*/-->
+
+
+	</body>
+</html>

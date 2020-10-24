@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head th:insert="_fragments2 :: css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/admin/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../static/admin/css/dashboard.css" rel="stylesheet">
+
+
+    <title>博客管理</title>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" th:replace="_fragments2 :: menu">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">admin</a>      
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar" th:replace="_fragments2 :: aside">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="admin-index.html">
+                  <span data-feather="home"></span>
+                  主页 <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-user.html">
+                  <span data-feather="file"></span>
+                  个人管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-category.html">
+                  <span data-feather="file"></span>
+                  类别管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-label.html">
+                  <span data-feather="file"></span>
+                  标签管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-blog.html">
+                  <span data-feather="file"></span>
+                  博客管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-announcement.html">
+                  <span data-feather="file"></span>
+                  公告管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-animation.html">
+                  <span data-feather="file"></span>
+                  动漫管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-carte.html">
+                  <span data-feather="file"></span>
+                  名片管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-comment.html">
+                  <span data-feather="file"></span>
+                  评论管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-message.html">
+                  <span data-feather="file"></span>
+                  消息管理
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">博客管理</h1>
+          </div>
+          
+          <p><a href="#" th:href="@{/admin/blog/input}"><button type="button" class="btn btn-lg btn-dark">新增博客</button></a></p>
+            <div class="alert alert-success alert-dismissible" th:unless="${#strings.isEmpty(message)}">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong th:text="${message}"></strong>
+            </div>
+            <div class="form-inline my-2 my-lg-0">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="title" placeholder="标题">
+                    <!--下拉菜单-->
+
+                    <select class="form-control" name="typeId">
+                        <option value="" disabled selected>文章类别</option>
+                        <option th:each="type:${types}" value ="volvo" th:value="${type.id}" th:text="${type.name}">Volvo</option>
+
+                    </select>
+
+
+                    <button type="button" id="search-btn" class="btn btn-secondary">搜索</button>
+
+                </div>
+            </div>
+
+
+            <div class="table-responsive" id="table-container">
+             <table class="table" th:fragment="blogList">
+              <thead>
+                <tr>
+                  <th>编号</th>
+                  <th>博客名称</th>
+                  <th>文章类别</th>
+                  <th>发表时间</th>
+                  <th>查看文章</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="blog,iterStat:${pageInfo.list}">
+                  <td th:text="${iterStat.count}"></td>
+                  <td th:text="${blog.title}"></td>
+                  <td th:text="${blog.type.name}"></td>
+                  <td th:text="${#dates.format(blog.createTime,'yyyy-MM-dd')}"></td>
+                  <td><button type="button" class="btn btn-sm btn-default"><a href="" th:href="@{/detail/{id}(id=${blog.id})}">查看文章</a></button></td></td>
+                  <th>
+                      <button type="button" class="btn btn-sm btn-default"><a class="text-muted" href="#" th:href="@{/admin/blog/{id}/input(id=${blog.id})}">编辑</a></button>
+                      <button type="button" class="btn btn-sm btn-dark"><a class="text-muted" href="#" th:href="@{/admin/blog/{id}/delete(id=${blog.id})}">删除</a></button>
+                  </th>
+                </tr>
+
+              </tbody>
+            </table>
+
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <div aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item" th:if="${not pageInfo.isFirstPage}"><a class="page-link" href="#" th:href="@{/admin/blog(page=${pageInfo.prePage},size=${pageInfo.pageSize})}">Previous</a></li>
+                    <li class="page-item" th:if="${pageInfo.isFirstPage}"><a class="page-link" href="javascript:alert('已经是最前面一页啦！');">Previous</a></li>
+
+                    <li class="page-item" th:each="count:${#numbers.sequence(1, pageInfo.pages)}">
+                        <a class="page-link bg-primary text-white" href="#"  th:if="${count==pageInfo.pageNum}" th:href="@{/admin/blog(page=${count},size=${pageInfo.pageSize})}" th:text="${count}"></a>
+                        <a class="page-link" href="#"  th:if="${count!=pageInfo.pageNum}" th:href="@{/admin/blog(page=${count},size=${pageInfo.pageSize})}" th:text="${count}"></a>
+                    </li>
+
+                    <li class="page-item" th:if="${not pageInfo.isLastPage}"><a class="page-link" href="#" th:href="@{/admin/blog(page=${pageInfo.nextPage},size=${pageInfo.pageSize})}">Next</a></li>
+                    <li class="page-item" th:if="${pageInfo.isLastPage}"><a class="page-link" href="javascript:alert('已经是最后面一页啦！');">Next</a></li>
+
+                </ul>
+            </div>
+
+        </main>
+      </div>
+    </div>
+
+
+    <!--/*/<th:block th:replace="_fragments2 :: script">/*/-->
+    <script src="../../static/admin/js/jquery-3.3.1.slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../static/admin/js/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../static/admin/js/popper.min.js"></script>
+    <script src="../../static/admin/js/bootstrap.min.js"></script>
+    <script src="../../static/admin/js/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+    <script src="../../static/admin/lib/editmd/jquery.min.js"></script>
+    <script src="../../static/admin/lib/editmd/editormd.js"></script>
+    <!--/*/</th:block>/*/-->
+
+
+    <script>
+
+        $("#search-btn").click(function(){
+            loaddata();
+        });
+
+        function loaddata(){
+            $("#table-container").load(/*[[@{/admin/blog/search}]]*/"/admin/blog/search",{
+                title : $("[name='title']").val(),
+                typeId : $("[name='typeId']").val()
+            });
+        }
+    </script>
+
+  </body>
+</html>

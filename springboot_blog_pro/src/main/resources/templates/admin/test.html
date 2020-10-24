@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>markToHtmlDemo</title>
+
+    <!--引入样式文件-->
+    <link rel="stylesheet" href="css/style.css" th:href="@{/admin/lib/editmd/css/style.css}"/>
+    <link rel="stylesheet" href="css/editormd.preview.css" th:href="@{/admin/lib/editmd/css/editormd.preview.css}"/>
+
+    <!--引入js文件-->
+    <script src="js/jquery-1.10.2.min.js" th:src="@{/admin/lib/editmd/jquery.min.js}"></script>
+    <script src="js/editor/marked.min.js" th:src="@{/admin/lib/editmd/marked.min.js}"></script>
+    <script src="js/editor/prettify.min.js" th:src="@{/admin/lib/editmd/prettify.min.js}"></script>
+    <script src="js/editor/raphael.min.js" th:src="@{/admin/lib/editmd/raphael.min.js}"></script>
+    <script src="js/editor/underscore.min.js" th:src="@{/admin/lib/editmd/underscore.min.js}"></script>
+    <script src="js/editor/sequence-diagram.min.js"  th:src="@{/admin/lib/editmd/sequence-diagram.min.js}"></script>
+    <script src="js/editor/flowchart.min.js" th:src="@{/admin/lib/editmd/flowchart.min.js}"></script>
+    <script src="js/editor/jquery.flowchart.min.js" th:src="@{/admin/lib/editmd/jquery.flowchart.min.js}"></script>
+    <script src="js/editor/editormd.js" th:src="@{/admin/lib/editmd/editormd.js}"></script>
+
+</head>
+
+<body>
+<!--输入需要转换的markdown文件开始-->
+<h1>转换前</h1>
+        <textarea id="demo1" style="width:800px;height:300px;">
+#### Editor.md directory
+
+    editor.md/
+            lib/
+            css/
+            scss/
+            tests/
+            fonts/
+            images/
+            plugins/
+            examples/
+            languages/
+            editormd.js
+            ...
+
+```java
+public static void main(String[] args) {
+    System.out.println("Hello World!");
+}```
+        </textarea>
+<!--输入需要转换的markdown文件结束-->
+
+<!--点击该按钮进行转换-->
+<button onclick="mdToHml();" type="button">点击转Html</button>
+
+
+<p>=====================================</p>
+
+<h1>转换后</h1>
+
+<!--在该div中展示,如有初始化的数据可以放在textarea中-->
+<div id="testEditorMdview">
+    <textarea id="appendTest" style="display:none;"></textarea>
+</div>
+
+
+<!--js开始-->
+<script type="text/javascript">
+
+    //markDown转HTMl的方法
+    function mdToHml(){
+
+        //先对容器初始化，在需要展示的容器中创建textarea隐藏标签，必须是动态创建
+        $("#testEditorMdview").html('<textarea id="appendTest" style="display:none;"></textarea>');
+        var content=$("#demo1").val();//获取需要转换的内容
+        $("#appendTest").val(content);//将需要转换的内容加到转换后展示容器的textarea隐藏标签中
+
+        //转换开始,第一个参数是上面的div的id
+        editormd.markdownToHTML("testEditorMdview", {
+            htmlDecode: "style,script,iframe", //可以过滤标签解码
+            emoji: true,
+            taskList:true,
+            tex: true,               // 默认不解析
+            flowChart:true,         // 默认不解析
+            sequenceDiagram:true,  // 默认不解析
+        });
+    }
+</script>
+<!--js结束-->
+
+</body>
+</html>

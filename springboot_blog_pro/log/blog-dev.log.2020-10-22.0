@@ -1,0 +1,29 @@
+2020-10-22 15:49:10.804  INFO 13596 --- [main] c.ckx.SpringbootBlogProApplicationTests  : Starting SpringbootBlogProApplicationTests on PC-20181227TJAF with PID 13596 (started by Administrator in E:\springboot_blog_pro)
+2020-10-22 15:49:10.818 DEBUG 13596 --- [main] c.ckx.SpringbootBlogProApplicationTests  : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-10-22 15:49:10.819  INFO 13596 --- [main] c.ckx.SpringbootBlogProApplicationTests  : The following profiles are active: dev
+2020-10-22 15:49:15.321  INFO 13596 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-22 15:49:15.655  INFO 13596 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-22 15:49:17.633  INFO 13596 --- [main] c.ckx.SpringbootBlogProApplicationTests  : Started SpringbootBlogProApplicationTests in 7.594 seconds (JVM running for 9.908)
+2020-10-22 15:49:18.406  INFO 13596 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-22 15:51:01.402  INFO 13564 --- [main] c.ckx.SpringbootBlogProApplicationTests  : Starting SpringbootBlogProApplicationTests on PC-20181227TJAF with PID 13564 (started by Administrator in E:\springboot_blog_pro)
+2020-10-22 15:51:01.403 DEBUG 13564 --- [main] c.ckx.SpringbootBlogProApplicationTests  : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-10-22 15:51:01.403  INFO 13564 --- [main] c.ckx.SpringbootBlogProApplicationTests  : The following profiles are active: dev
+2020-10-22 15:51:06.203  INFO 13564 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-22 15:51:06.456  INFO 13564 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-22 15:51:07.396  INFO 13564 --- [main] c.ckx.SpringbootBlogProApplicationTests  : Started SpringbootBlogProApplicationTests in 6.787 seconds (JVM running for 8.699)
+2020-10-22 15:51:08.077  INFO 13564 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-22 22:54:09.604  INFO 23800 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : Starting SpringbootBlogProApplication on PC-20181227TJAF with PID 23800 (E:\springboot_blog_pro\target\classes started by Administrator in E:\springboot_blog_pro)
+2020-10-22 22:54:09.607 DEBUG 23800 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-10-22 22:54:09.608  INFO 23800 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : The following profiles are active: dev
+2020-10-22 22:54:09.740  INFO 23800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-22 22:54:09.741  INFO 23800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-22 22:54:13.930  INFO 23800 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-22 22:54:13.946  INFO 23800 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-22 22:54:13.946  INFO 23800 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-10-22 22:54:14.119  INFO 23800 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-22 22:54:14.119  INFO 23800 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4377 ms
+2020-10-22 22:54:15.357  INFO 23800 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-22 22:54:15.534  INFO 23800 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-22 22:54:16.148  INFO 23800 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-22 22:54:16.216  INFO 23800 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-22 22:54:16.220  INFO 23800 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : Started SpringbootBlogProApplication in 7.257 seconds (JVM running for 8.395)

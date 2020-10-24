@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head(title)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--     <link rel="icon" href="../../../../favicon.ico"> -->
+
+    <title th:replace="${title}">内容查看</title>
+
+    <link rel="stylesheet" href="../../static/admin/lib/editmd/css/style.css" th:href="@{/admin/lib/editmd/css/style.css}"/>
+    <link rel="stylesheet" href="../../static/admin/lib/editmd/css/editormd.css" th:href="@{/admin/lib/editmd/css/editormd.css}" />
+
+    <link href="../../static/admin/css/signin.css" rel="stylesheet" th:href="@{/admin/css/signin.css}">
+
+    <th:block th:fragment="css">
+        <link href="../../static/admin/css/bootstrap.min.css" rel="stylesheet" th:href="@{/admin/css/bootstrap.min.css}">
+        <link href="../../static/admin/css/dashboard.css" rel="stylesheet" th:href="@{/admin/css/dashboard.css}">
+    </th:block>
+
+</head>
+<body>
+    <!--头部导航-->
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" th:fragment="menu">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" th:text="${session.user.nikeName}"></a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#" th:href="@{/admin/logout}">注销</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--侧栏导航-->
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar" th:fragment="aside">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/admin/index}">
+                        <span data-feather="home"></span>
+                        主页 <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-user.html">
+                        <span data-feather="file"></span>
+                        个人管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/admin/types}">
+                        <span data-feather="file"></span>
+                        类别管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/admin/label}">
+                        <span data-feather="file"></span>
+                        标签管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/admin/blog}">
+                        <span data-feather="file"></span>
+                        博客管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-announcement.html">
+                        <span data-feather="file"></span>
+                        公告管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-carte.html">
+                        <span data-feather="file"></span>
+                        名片管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-comment.html">
+                        <span data-feather="file"></span>
+                        评论管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-message.html">
+                        <span data-feather="file"></span>
+                        消息管理
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- js -->
+    <th:block th:fragment="script">
+        <script src="../../static/admin/js/jquery-3.3.1.slim.min.js" th:src="@{/admin/js/jquery-3.3.1.slim.min.js}"></script>
+        <script>window.jQuery || document.write('<script src="../../static/admin/js/jquery-slim.min.js" th:src="@{/admin/js/jquery-slim.min.js}"><\/script>')</script>
+        <script src="../../static/admin/js/popper.min.js" th:src="@{/admin/js/popper.min.js}"></script>
+        <script src="../../static/admin/js/bootstrap.min.js" th:src="@{/admin/js/bootstrap.min.js}"></script>
+        <script src="../../static/admin/js/feather.min.js" th:src="@{/admin/js/feather.min.js}"></script>
+        <script>
+            feather.replace()
+        </script>
+        <script src="../../static/admin/lib/editmd/jquery.min.js" th:src="@{/admin/lib/editmd/jquery.min.js}"></script>
+        <script src="../../static/admin/lib/editmd/editormd.js" th:src="@{/admin/lib/editmd/editormd.js}"></script>
+    </th:block>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="_fragments :: head(~{::title})">
+		<title>Code &amp; Blogs</title>
+
+		<!-- meta -->
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <!-- css -->
+		<link rel="stylesheet" href="../../static/blog/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../static/blog/css/pace.css">
+	    <link rel="stylesheet" href="../../static/blog/css/custom.css">
+
+
+	</head>
+
+	<body id="page" >
+        <!--头部-->
+        <div class="container" th:replace="_fragments :: menu">
+        </div>
+
+		<div class="content-body">
+			<div class="container">
+				<div class="row">
+					<main class="col-md-12">
+						<h1 class="page-title">About Me</h1>
+						<article class="post">
+							<div class="entry-content clearfix">
+								<figure class="img-responsive-center">
+									<img class="img-responsive" src="../../static/blog/img/me.jpg" alt="Developer Image" th:src="@{/blog/img/her.jpg}" height="20%" width="30%">
+								</figure>
+								<p>When we look at pictures from past dynasties in China, we can see that girls who were considere“beauties of the ages”look vastly different from girls who follow today's beauty standards.</p>
+								<p>Some features of Chinese beauties have not changed for thousands of years while other facets are completely opposite of the traditional idea of beauty in China.</p>
+								<div class="height-40px"></div>
+								<h2 class="title text-center">Social</h2>
+								<ul class="social">
+									<li class="facebook"><a href="#" th:href="@{https://blog.csdn.net/qq_32426313}"><img src="" th:src="@{/blog/img/csdn.png}" height="10%" width="20%"></a></li>
+									<li class="twitter"><a href="#"  th:href="@{/contact}"><img src="" th:src="@{/blog/img/email.png}" height="10%" width="20%"></a></li>
+									<li class="google-plus"><a href="#" th:href="@{https://github.com/Cui-Kaixing/}"><img src="" th:src="@{/blog/img/github.png}" height="10%" width="25%"></a></li>
+
+								</ul>
+							</div>
+						</article>
+					</main>
+				</div>
+			</div>
+		</div>
+
+        <!--底部-->
+        <footer id="site-footer" th:replace="_fragments :: footer">
+        </footer>
+
+        <!-- Mobile Menu -->
+        <div class="overlay overlay-hugeinc" th:replace="_fragments :: mobile">
+        </div>
+
+
+        <!--/*/<th:block th:replace="_fragments :: script">/*/-->
+        <!-- js -->
+        <script src="../../static/blog/js/script.js"  th:src="@{/blog/js/script.js}"></script>
+        <script src="../../static/blog/js/jquery-2.1.3.min.js"></script>
+        <script src="../../static/blog/js/bootstrap.min.js" ></script>
+        <script src="../../static/blog/js/pace.min.js" ></script>
+        <script src="../../static/blog/js/modernizr.custom.js"></script>
+        <!--/*/</th:block>/*/-->
+
+
+    </body>
+</html>

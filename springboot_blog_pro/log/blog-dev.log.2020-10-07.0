@@ -1,0 +1,82 @@
+2020-10-07 19:47:58.952  INFO 1388 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : Starting SpringbootBlogProApplication on PC-20181227TJAF with PID 1388 (E:\springboot_blog_pro\target\classes started by Administrator in E:\springboot_blog_pro)
+2020-10-07 19:47:58.967 DEBUG 1388 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-10-07 19:47:58.967  INFO 1388 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : The following profiles are active: dev
+2020-10-07 19:47:59.126  INFO 1388 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-07 19:47:59.126  INFO 1388 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-07 19:48:03.264  INFO 1388 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-07 19:48:03.283  INFO 1388 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-07 19:48:03.283  INFO 1388 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-10-07 19:48:03.466  INFO 1388 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-07 19:48:03.470  INFO 1388 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4343 ms
+2020-10-07 19:48:04.707  INFO 1388 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-07 19:48:04.882  INFO 1388 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-07 19:48:05.699  INFO 1388 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-07 19:48:05.762  INFO 1388 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-07 19:48:05.765  INFO 1388 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : Started SpringbootBlogProApplication in 8.024 seconds (JVM running for 10.276)
+2020-10-07 19:48:23.464  INFO 1388 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-07 19:48:23.465  INFO 1388 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-07 19:48:23.489  INFO 1388 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+2020-10-07 19:48:23.543  INFO 1388 --- [http-nio-8080-exec-1] com.ckx.aspect.LogAspect                 : Request ：RequestLog{url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.ckx.web.IndexController.index', args=[]}
+2020-10-07 19:48:23.563  INFO 1388 --- [http-nio-8080-exec-1] com.ckx.aspect.LogAspect                 : ---------doAfter-------
+2020-10-07 19:48:23.564  INFO 1388 --- [http-nio-8080-exec-1] com.ckx.aspect.LogAspect                 : Result : admin/admin-login
+2020-10-07 19:48:39.165  INFO 1388 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-07 19:48:39.469  INFO 1388 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-07 19:48:39.521 DEBUG 1388 --- [http-nio-8080-exec-6] com.ckx.dao.UserDao.checkUser            : ==>  Preparing: select * from user where username = ? and password = ?;
+2020-10-07 19:48:39.549 DEBUG 1388 --- [http-nio-8080-exec-6] com.ckx.dao.UserDao.checkUser            : ==> Parameters: ckx(String), 733ec8801983e81f8c729a9bef2c8689(String)
+2020-10-07 19:48:39.569 DEBUG 1388 --- [http-nio-8080-exec-6] com.ckx.dao.UserDao.checkUser            : <==      Total: 1
+2020-10-07 19:48:41.842 DEBUG 1388 --- [http-nio-8080-exec-4] com.ckx.dao.TypeDao.findAll_COUNT        : ==>  Preparing: SELECT count(0) FROM type
+2020-10-07 19:48:41.843 DEBUG 1388 --- [http-nio-8080-exec-4] com.ckx.dao.TypeDao.findAll_COUNT        : ==> Parameters: 
+2020-10-07 19:48:41.846 DEBUG 1388 --- [http-nio-8080-exec-4] com.ckx.dao.TypeDao.findAll_COUNT        : <==      Total: 1
+2020-10-07 19:48:41.847 DEBUG 1388 --- [http-nio-8080-exec-4] com.ckx.dao.TypeDao.findAll              : ==>  Preparing: SELECT * FROM type ORDER BY id DESC LIMIT ?
+2020-10-07 19:48:41.847 DEBUG 1388 --- [http-nio-8080-exec-4] com.ckx.dao.TypeDao.findAll              : ==> Parameters: 5(Integer)
+2020-10-07 19:48:41.849 DEBUG 1388 --- [http-nio-8080-exec-4] com.ckx.dao.TypeDao.findAll              : <==      Total: 5
+2020-10-07 19:48:46.304 DEBUG 1388 --- [http-nio-8080-exec-10] com.ckx.dao.TagDao.findAll_COUNT         : ==>  Preparing: SELECT count(0) FROM tag
+2020-10-07 19:48:46.305 DEBUG 1388 --- [http-nio-8080-exec-10] com.ckx.dao.TagDao.findAll_COUNT         : ==> Parameters: 
+2020-10-07 19:48:46.308 DEBUG 1388 --- [http-nio-8080-exec-10] com.ckx.dao.TagDao.findAll_COUNT         : <==      Total: 1
+2020-10-07 19:48:46.309 DEBUG 1388 --- [http-nio-8080-exec-10] com.ckx.dao.TagDao.findAll               : ==>  Preparing: SELECT * FROM tag ORDER BY id DESC LIMIT ?
+2020-10-07 19:48:46.310 DEBUG 1388 --- [http-nio-8080-exec-10] com.ckx.dao.TagDao.findAll               : ==> Parameters: 2(Integer)
+2020-10-07 19:48:46.312 DEBUG 1388 --- [http-nio-8080-exec-10] com.ckx.dao.TagDao.findAll               : <==      Total: 2
+2020-10-07 19:48:50.300 DEBUG 1388 --- [http-nio-8080-exec-1] com.ckx.dao.TagDao.deleteTag             : ==>  Preparing: DELETE from tag WHERE id=?;
+2020-10-07 19:48:50.300 DEBUG 1388 --- [http-nio-8080-exec-1] com.ckx.dao.TagDao.deleteTag             : ==> Parameters: 5(Long)
+2020-10-07 19:48:50.302 DEBUG 1388 --- [http-nio-8080-exec-1] com.ckx.dao.TagDao.deleteTag             : <==    Updates: 1
+2020-10-07 19:48:50.351 DEBUG 1388 --- [http-nio-8080-exec-8] com.ckx.dao.TagDao.findAll_COUNT         : ==>  Preparing: SELECT count(0) FROM tag
+2020-10-07 19:48:50.352 DEBUG 1388 --- [http-nio-8080-exec-8] com.ckx.dao.TagDao.findAll_COUNT         : ==> Parameters: 
+2020-10-07 19:48:50.353 DEBUG 1388 --- [http-nio-8080-exec-8] com.ckx.dao.TagDao.findAll_COUNT         : <==      Total: 1
+2020-10-07 19:48:50.354 DEBUG 1388 --- [http-nio-8080-exec-8] com.ckx.dao.TagDao.findAll               : ==>  Preparing: SELECT * FROM tag ORDER BY id DESC LIMIT ?
+2020-10-07 19:48:50.355 DEBUG 1388 --- [http-nio-8080-exec-8] com.ckx.dao.TagDao.findAll               : ==> Parameters: 2(Integer)
+2020-10-07 19:48:50.356 DEBUG 1388 --- [http-nio-8080-exec-8] com.ckx.dao.TagDao.findAll               : <==      Total: 2
+2020-10-07 19:48:58.568 DEBUG 1388 --- [http-nio-8080-exec-7] com.ckx.dao.TagDao.deleteTag             : ==>  Preparing: DELETE from tag WHERE id=?;
+2020-10-07 19:48:58.568 DEBUG 1388 --- [http-nio-8080-exec-7] com.ckx.dao.TagDao.deleteTag             : ==> Parameters: 3(Long)
+2020-10-07 19:48:58.569 DEBUG 1388 --- [http-nio-8080-exec-7] com.ckx.dao.TagDao.deleteTag             : <==    Updates: 1
+2020-10-07 19:48:58.580 DEBUG 1388 --- [http-nio-8080-exec-1] com.ckx.dao.TagDao.findAll_COUNT         : ==>  Preparing: SELECT count(0) FROM tag
+2020-10-07 19:48:58.580 DEBUG 1388 --- [http-nio-8080-exec-1] com.ckx.dao.TagDao.findAll_COUNT         : ==> Parameters: 
+2020-10-07 19:48:58.581 DEBUG 1388 --- [http-nio-8080-exec-1] com.ckx.dao.TagDao.findAll_COUNT         : <==      Total: 1
+2020-10-07 19:48:58.582 DEBUG 1388 --- [http-nio-8080-exec-1] com.ckx.dao.TagDao.findAll               : ==>  Preparing: SELECT * FROM tag ORDER BY id DESC LIMIT ?
+2020-10-07 19:48:58.582 DEBUG 1388 --- [http-nio-8080-exec-1] com.ckx.dao.TagDao.findAll               : ==> Parameters: 2(Integer)
+2020-10-07 19:48:58.583 DEBUG 1388 --- [http-nio-8080-exec-1] com.ckx.dao.TagDao.findAll               : <==      Total: 2
+2020-10-07 19:55:46.100  INFO 3364 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : Starting SpringbootBlogProApplication on PC-20181227TJAF with PID 3364 (E:\springboot_blog_pro\target\classes started by Administrator in E:\springboot_blog_pro)
+2020-10-07 19:55:46.103 DEBUG 3364 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-10-07 19:55:46.104  INFO 3364 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : The following profiles are active: dev
+2020-10-07 19:55:46.178  INFO 3364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-07 19:55:46.179  INFO 3364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-07 19:55:49.889  INFO 3364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-07 19:55:49.901  INFO 3364 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-07 19:55:49.902  INFO 3364 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-10-07 19:55:50.130  INFO 3364 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-07 19:55:50.130  INFO 3364 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3951 ms
+2020-10-07 19:55:51.217  INFO 3364 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-07 19:55:51.364  INFO 3364 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-07 19:55:51.936  INFO 3364 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-07 19:55:51.998  INFO 3364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-07 19:55:52.002  INFO 3364 --- [restartedMain] com.ckx.SpringbootBlogProApplication     : Started SpringbootBlogProApplication in 6.479 seconds (JVM running for 7.484)
+2020-10-07 19:56:02.846  INFO 3364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-07 19:56:02.846  INFO 3364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-07 19:56:02.866  INFO 3364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2020-10-07 19:56:13.855  INFO 3364 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-07 19:56:14.096  INFO 3364 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-07 19:56:14.139 DEBUG 3364 --- [http-nio-8080-exec-8] com.ckx.dao.UserDao.checkUser            : ==>  Preparing: select * from user where username = ? and password = ?;
+2020-10-07 19:56:14.167 DEBUG 3364 --- [http-nio-8080-exec-8] com.ckx.dao.UserDao.checkUser            : ==> Parameters: ckx(String), 733ec8801983e81f8c729a9bef2c8689(String)
+2020-10-07 19:56:14.182 DEBUG 3364 --- [http-nio-8080-exec-8] com.ckx.dao.UserDao.checkUser            : <==      Total: 1
+2020-10-07 20:08:07.664 DEBUG 3364 --- [http-nio-8080-exec-9] com.ckx.dao.UserDao.checkUser            : ==>  Preparing: select * from user where username = ? and password = ?;
+2020-10-07 20:08:07.665 DEBUG 3364 --- [http-nio-8080-exec-9] com.ckx.dao.UserDao.checkUser            : ==> Parameters: ckx(String), 733ec8801983e81f8c729a9bef2c8689(String)
+2020-10-07 20:08:07.667 DEBUG 3364 --- [http-nio-8080-exec-9] com.ckx.dao.UserDao.checkUser            : <==      Total: 1

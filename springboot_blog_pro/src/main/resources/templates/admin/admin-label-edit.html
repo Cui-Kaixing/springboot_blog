@@ -1,0 +1,142 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head th:insert="_fragments2 :: css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--     <link rel="icon" href="../../../../favicon.ico"> -->
+
+    <title>标签管理</title>
+
+    <!-- Bootstrap core CS
+      S -->
+    <link href="../../static/admin/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../static/admin/css/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" th:replace="_fragments2 :: menu">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">admin</a>      
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar" th:replace="_fragments2 :: aside">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="admin-index.html">
+                  <span data-feather="home"></span>
+                  主页 <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-user.html">
+                  <span data-feather="file"></span>
+                  个人管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-category.html">
+                  <span data-feather="file"></span>
+                  类别管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-label.html">
+                  <span data-feather="file"></span>
+                  标签管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-blog.html">
+                  <span data-feather="file"></span>
+                  博客管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-announcement.html">
+                  <span data-feather="file"></span>
+                  公告管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-animation.html">
+                  <span data-feather="file"></span>
+                  动漫管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-carte.html">
+                  <span data-feather="file"></span>
+                  名片管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-comment.html">
+                  <span data-feather="file"></span>
+                  评论管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin-message.html">
+                  <span data-feather="file"></span>
+                  消息管理
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">标签更改</h1>
+          </div>          
+          <p><button type="button" class="btn btn-lg btn-default">返回列表</button></p>
+          <div class="col-sm-offset-1">
+            <form method="post" action="#" th:object="${tag}" th:action="@{/admin/label/post}">
+              <div class="form-row align-items-center">
+                <div class="col-sm-3 my-1">
+                  <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">标签名称</div>
+                    </div>
+                    <input type="text" name="tagName" class="form-control" id="inlineFormInputGroupUsername" placeholder="Tagname">
+                  </div>
+                </div>
+                <div class="col-auto my-1">
+                  <button type="submit" class="btn btn-dark">提 交 </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+
+
+    <!--/*/<th:block th:replace="_fragments2 :: script">/*/-->
+    <script src="../../static/admin/js/jquery-3.3.1.slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../static/admin/js/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../static/admin/js/popper.min.js"></script>
+    <script src="../../static/admin/js/bootstrap.min.js"></script>
+    <script src="../../static/admin/js/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+    <script src="../../static/admin/lib/editmd/jquery.min.js"></script>
+    <script src="../../static/admin/lib/editmd/editormd.js"></script>
+    <!--/*/</th:block>/*/-->
+
+  </body>
+</html>

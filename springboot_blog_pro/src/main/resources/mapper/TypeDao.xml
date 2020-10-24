@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ckx.dao.TypeDao">
+
+    <resultMap id="typeMap1" type="com.ckx.domain.Type">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <collection property="blogs" ofType="com.ckx.domain.Blog">
+            <id property="id" column="id"></id>
+            <result property="typeId" column="type_id"></result>
+            <result property="userId" column="user_id"></result>
+            <result property="title" column="title"></result>
+            <result property="content" column="content"></result>
+            <result property="views" column="views"></result>
+            <result property="commentAbled" column="commentabled"></result>
+            <result property="createTime" column="createtime"></result>
+
+        </collection>
+        
+    </resultMap>
+
+
+    <select id="findAll" resultType="com.ckx.domain.Type">
+        SELECT * FROM type
+    </select>
+
+    <select id="getAllType" resultMap="typeMap1">
+        SELECT type.id,type.name,blog.id,blog.type_id,blog.title,blog.content,blog.views,blog.commentabled,blog.createtime
+        FROM type INNER JOIN blog ON blog.type_id=type.id
+    </select>
+
+    <select id="findBytypeName" resultType="com.ckx.domain.Type">
+        SELECT * FROM type WHERE name = #{typeName};
+    </select>
+
+    <!--保存类型-->
+    <insert id="saveType">
+        INSERT INTO type(name) VALUES (#{name});
+    </insert>
+
+    <select id="getType" resultMap="typeMap1">
+        SELECT type.id,type.name,blog.id,blog.type_id,blog.title,blog.content,blog.views,blog.commentabled,blog.createtime
+        FROM type INNER JOIN blog ON blog.type_id=type.id WHERE type_id=#{id}
+    </select>
+
+    <update id="updateType">
+        UPDATE type SET name=#{typeName} WHERE id=#{id};
+    </update>
+
+    <delete id="deleteType">
+        DELETE from type WHERE id=#{id};
+    </delete>
+
+
+
+
+</mapper>

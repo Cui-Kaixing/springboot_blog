@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driverClassName : com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot_blog
+    username: root
+    password: "0416"
+
+
+logging:
+  level:
+    root: info
+    com.ckx: debug
+  file:  ./log/blog-dev.log
+
+mybatis:
+  type-aliases-package: com.ckx.domain
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+#pagehelper分页插件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
